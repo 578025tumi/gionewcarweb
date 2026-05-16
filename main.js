@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Automatic',
       color: 'Giallo Auge (Yellow)',
       interior: 'Nero Ade / Giallo',
-      image: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&h=500&fit=crop',
+      image: 'simon-humler-Gehrp83-fxc-unsplash.jpg',
       badge: 'Certified'
     },
     {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '9-Speed Automatic',
       color: 'Obsidian Black',
       interior: 'Exclusive Nappa Leather',
-      image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=500&fit=crop',
+      image: 'eser-desu-xYGWuJUQQt0-unsplash.jpg',
       badge: 'Premium'
     },
     {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Automatic',
       color: 'Constellation Grey',
       interior: 'Perlino / Ebony',
-      image: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&h=500&fit=crop',
+      image: 'jack-lucas-smith-crhK6sKfaAY-unsplash.jpg',
       badge: 'Luxury'
     },
     {
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Dual-Clutch',
       color: 'Bianco Audace',
       interior: 'Nero / Grigio',
-      image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=500&fit=crop',
+      image: 'hoyoun-lee-R43VEYlmIZ8-unsplash.jpg',
       badge: 'Rare'
     },
     {
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Automatic',
       color: 'Magnetic Silver',
       interior: 'Obsidian / Cream',
-      image: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800&h=500&fit=crop',
+      image: 'samuel-hagger-lUBcAH8LrZU-unsplash.jpg',
       badge: 'Elegant'
     }
   ];
