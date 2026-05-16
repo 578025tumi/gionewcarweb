@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Dual-Clutch',
       color: 'Beluga Black',
       interior: 'Linen / Beluga',
-      image: '6CJUWC7VEBI4ZIYXTUQF4TQ46E',
+      image: 'https://unsplash.com/photos/blue-coupe-on-road-cAbH8B-14Vo',
       badge: 'Low Miles'
     },
     {
