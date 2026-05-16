@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transmission: '8-Speed Dual-Clutch',
       color: 'Beluga Black',
       interior: 'Linen / Beluga',
-      image: 'halex-ifti-8mBvCiVMBqg-unsplash.jpg',
+      image: 'alex-ifti-8mBvCiVMBqg-unsplash.jpg',
       badge: 'Low Miles'
     },
     {
