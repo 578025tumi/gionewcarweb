@@ -1,0 +1,156 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* ─── Hero Background ─── */
+.hero-bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(234, 179, 8, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(15, 23, 42, 0.8) 0%, transparent 70%);
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 6, 23, 0.6) 60%, rgba(2, 6, 23, 1) 100%);
+}
+
+/* ─── Navigation ─── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #eab308;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ─── Filter Buttons ─── */
+.filter-btn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  color: #fde047;
+  border-color: rgba(250, 204, 21, 0.3);
+  background: rgba(250, 204, 21, 0.05);
+}
+
+.filter-btn.active {
+  color: #0f172a;
+  background: #eab308;
+  border-color: #eab308;
+}
+
+/* ─── Form Inputs ─── */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #eab308;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.1);
+}
+
+.form-input::placeholder {
+  color: #475569;
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%2394a3b8' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+}
+
+/* ─── Vehicle Cards ─── */
+.vehicle-card {
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Modal Scrollbar ─── */
+#modalContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+#modalContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#modalContent::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+/* ─── Smooth Scroll ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(234, 179, 8, 0.3);
+  color: white;
+}
+
+/* ─── Animations ─── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ─── Brand Logos Hover ─── */
+#brandLogos span {
+  transition: all 0.3s ease;
+}
+
+#brandLogos span:hover {
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Repo Motors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              800: '#854d0e',
+              900: '#713f12',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <svg class="w-6 h-6 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-display text-xl font-bold text-white" data-i18n="nav.brand">Elite Repo</span>
+            <span class="block text-[10px] uppercase tracking-[0.35em] text-gold-400" data-i18n="nav.tagline">Motors</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#inventory" class="nav-link text-sm text-slate-300 hover:text-gold-400 transition" data-i18n="nav.inventory">Inventory</a>
+          <a href="#about" class="nav-link text-sm text-slate-300 hover:text-gold-400 transition" data-i18n="nav.about">About</a>
+          <a href="#contact" class="nav-link text-sm text-slate-300 hover:text-gold-400 transition" data-i18n="nav.contact">Contact</a>
+          <a href="#contact" class="rounded-xl bg-gold-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-gold-400 transition" data-i18n="nav.cta">Inquire Now</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/5">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#inventory" class="block text-slate-300 hover:text-gold-400 transition" data-i18n="nav.inventory">Inventory</a>
+        <a href="#about" class="block text-slate-300 hover:text-gold-400 transition" data-i18n="nav.about">About</a>
+        <a href="#contact" class="block text-slate-300 hover:text-gold-400 transition" data-i18n="nav.contact">Contact</a>
+        <a href="#contact" class="inline-block rounded-xl bg-gold-500 px-5 py-2.5 text-sm font-semibold text-slate-950" data-i18n="nav.cta">Inquire Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="hero-gradient absolute inset-0"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
+      <div class="max-w-3xl">
+        <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 mb-8 opacity-0">
+          <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-gold-400" data-i18n="hero.badge">Exclusive Collection</span>
+        </div>
+        <h1 class="hero-title font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] opacity-0">
+          <span data-i18n="hero.title1">Premium</span><br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500" data-i18n="hero.title2">Repossessed</span><br>
+          <span data-i18n="hero.title3">Luxury Vehicles</span>
+        </h1>
+        <p class="hero-subtitle mt-6 text-lg sm:text-xl text-slate-300 max-w-xl leading-relaxed opacity-0" data-i18n="hero.subtitle">
+          Acquire world-class automobiles at a fraction of their original value. Every vehicle inspected, verified, and ready for discerning buyers.
+        </p>
+        <div class="hero-actions mt-10 flex flex-wrap gap-4 opacity-0">
+          <a href="#inventory" class="group inline-flex items-center gap-2 rounded-xl bg-gold-500 px-7 py-3.5 text-sm font-bold text-slate-950 hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold-500/25">
+            <span data-i18n="hero.cta1">Browse Inventory</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/5 transition" data-i18n="hero.cta2">Schedule Viewing</a>
+        </div>
+        <!-- Stats -->
+        <div class="hero-stats mt-16 grid grid-cols-3 gap-8 max-w-md opacity-0">
+          <div>
+            <div class="text-3xl font-bold text-gold-400 font-display">150+</div>
+            <div class="text-xs text-slate-400 mt-1" data-i18n="hero.stat1">Vehicles Available</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-gold-400 font-display">40-70%</div>
+            <div class="text-xs text-slate-400 mt-1" data-i18n="hero.stat2">Below Market Value</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-gold-400 font-display">100%</div>
+            <div class="text-xs text-slate-400 mt-1" data-i18n="hero.stat3">Verified History</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-xs text-slate-400 uppercase tracking-widest" data-i18n="hero.scroll">Scroll</span>
+      <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- Featured Brands -->
+  <section class="py-16 border-y border-white/5 bg-slate-900/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-8" data-i18n="brands.label">Featured Brands</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6" id="brandLogos">
+        <!-- Brands rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Inventory Section -->
+  <section id="inventory" class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400 mb-3" data-i18n="inventory.eyebrow">Our Collection</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-white" data-i18n="inventory.title">Available Vehicles</h2>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto" data-i18n="inventory.subtitle">Each vehicle has been thoroughly inspected and comes with a verified history report.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+        <button class="filter-btn" data-filter="sedan" data-i18n="filter.sedan">Sedans</button>
+        <button class="filter-btn" data-filter="suv" data-i18n="filter.suv">SUVs</button>
+        <button class="filter-btn" data-filter="sports" data-i18n="filter.sports">Sports</button>
+        <button class="filter-btn" data-filter="convertible" data-i18n="filter.convertible">Convertibles</button>
+      </div>
+
+      <!-- Vehicle Grid -->
+      <div id="vehicleGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Vehicles rendered by JS -->
+      </div>
+
+      <div id="noResults" class="hidden text-center py-16">
+        <svg class="w-16 h-16 mx-auto text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <p class="text-slate-400 text-lg" data-i18n="inventory.noResults">No vehicles found matching your criteria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Why Choose Us -->
+  <section id="about" class="py-24 bg-slate-900/40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400 mb-3" data-i18n="about.eyebrow">Why Choose Us</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-white" data-i18n="about.title">The Elite Advantage</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="feature-card group rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:border-gold-400/20 hover:bg-gold-400/5 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gold-400/10 flex items-center justify-center mb-6 group-hover:bg-gold-400/20 transition">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2" data-i18n="about.f1.title">Verified History</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="about.f1.desc">Full vehicle history reports with no hidden surprises.</p>
+        </div>
+        <div class="feature-card group rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:border-gold-400/20 hover:bg-gold-400/5 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gold-400/10 flex items-center justify-center mb-6 group-hover:bg-gold-400/20 transition">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2" data-i18n="about.f2.title">Exceptional Value</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="about.f2.desc">Save 40-70% compared to traditional dealership prices.</p>
+        </div>
+        <div class="feature-card group rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:border-gold-400/20 hover:bg-gold-400/5 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gold-400/10 flex items-center justify-center mb-6 group-hover:bg-gold-400/20 transition">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2" data-i18n="about.f3.title">Expert Inspection</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="about.f3.desc">200-point mechanical and cosmetic inspection on every vehicle.</p>
+        </div>
+        <div class="feature-card group rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:border-gold-400/20 hover:bg-gold-400/5 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-gold-400/10 flex items-center justify-center mb-6 group-hover:bg-gold-400/20 transition">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2" data-i18n="about.f4.title">White Glove Delivery</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="about.f4.desc">Nationwide delivery directly to your doorstep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400 mb-3" data-i18n="contact.eyebrow">Get In Touch</p>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold text-white mb-6" data-i18n="contact.title">Schedule a Private Viewing</h2>
+          <p class="text-slate-400 mb-10 leading-relaxed" data-i18n="contact.subtitle">Our luxury vehicle specialists are ready to assist you in finding your perfect automobile.</p>
+          
+          <div class="space-y-6">
+            <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-slate-500" data-i18n="contact.phone.label">Phone</p>
+                <div class="flex flex-col gap-1">
+                  <a href="tel:+12134927457" class="text-white font-medium hover:text-gold-400 transition">+1 213 492 7457</a>
+                  <a href="tel:+27604239069" class="text-white font-medium hover:text-gold-400 transition">+27 60 423 9069</a>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-slate-500">WhatsApp</p>
+                <div class="flex flex-col gap-1">
+                  <a href="https://wa.me/12134927457" target="_blank" rel="noopener" class="text-white font-medium hover:text-emerald-400 transition">+1 213 492 7457</a>
+                  <a href="https://wa.me/27604239069" target="_blank" rel="noopener" class="text-white font-medium hover:text-emerald-400 transition">+27 60 423 9069</a>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-slate-500" data-i18n="contact.email.label">Email</p>
+                <a href="mailto:giovanniknight@luxauctions.co.za" class="text-white font-medium hover:text-gold-400 transition">giovanniknight@luxauctions.co.za</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-slate-500" data-i18n="contact.location.label">Showroom</p>
+                <p class="text-white font-medium">1200 Luxury Lane, Beverly Hills, CA 90210</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form id="contactForm" class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="contact.form.name">Full Name</label>
+                <input type="text" id="contactName" class="form-input" placeholder="John Doe" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="contact.form.phone">Phone</label>
+                <input type="tel" id="contactPhone" class="form-input" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="contact.form.email">Email</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="john@example.com" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="contact.form.interest">Vehicle of Interest</label>
+              <select id="contactVehicle" class="form-input">
+                <option value="" data-i18n="contact.form.selectVehicle">Select a vehicle (optional)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="contact.form.message">Message</label>
+              <textarea id="contactMessage" rows="4" class="form-input resize-none" placeholder="I'm interested in..." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-xl bg-gold-500 py-3.5 text-sm font-bold text-slate-950 hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold-500/25" data-i18n="contact.form.submit">Send Inquiry</button>
+            <p id="formSuccess" class="hidden text-center text-sm text-emerald-400 font-medium" data-i18n="contact.form.success">Thank you! We'll be in touch shortly.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12 bg-slate-900/50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-slate-950" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="font-display text-lg font-bold text-white" data-i18n="nav.brand">Elite Repo</span>
+        </div>
+        <p class="text-sm text-slate-500" data-i18n="footer.copy">© 2024 Elite Repo Motors. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="text-slate-500 hover:text-gold-400 transition" aria-label="Privacy"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></a>
+          <a href="#" class="text-slate-500 hover:text-gold-400 transition" aria-label="Terms"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM6 20V4h5v5h5v11H6z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vehicle Detail Modal -->
+  <div id="vehicleModal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modalOverlay"></div>
+    <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+      <div id="modalContent" class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-slate-900 shadow-2xl">
+        <button id="modalClose" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 backdrop-blur flex items-center justify-center text-white hover:bg-black/70 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/27604239069" target="_blank" rel="noopener" id="whatsappFloat" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 hover:shadow-emerald-400/40 transition-all hover:scale-110" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

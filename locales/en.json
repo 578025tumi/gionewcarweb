@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "brand": "Elite Repo",
+    "tagline": "Motors",
+    "inventory": "Inventory",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Inquire Now"
+  },
+  "hero": {
+    "badge": "Exclusive Collection",
+    "title1": "Premium",
+    "title2": "Repossessed",
+    "title3": "Luxury Vehicles",
+    "subtitle": "Acquire world-class automobiles at a fraction of their original value. Every vehicle inspected, verified, and ready for discerning buyers.",
+    "cta1": "Browse Inventory",
+    "cta2": "Schedule Viewing",
+    "stat1": "Vehicles Available",
+    "stat2": "Below Market Value",
+    "stat3": "Verified History",
+    "scroll": "Scroll"
+  },
+  "brands": {
+    "label": "Featured Brands"
+  },
+  "inventory": {
+    "eyebrow": "Our Collection",
+    "title": "Available Vehicles",
+    "subtitle": "Each vehicle has been thoroughly inspected and comes with a verified history report.",
+    "noResults": "No vehicles found matching your criteria."
+  },
+  "filter": {
+    "all": "All",
+    "sedan": "Sedans",
+    "suv": "SUVs",
+    "sports": "Sports",
+    "convertible": "Convertibles"
+  },
+  "about": {
+    "eyebrow": "Why Choose Us",
+    "title": "The Elite Advantage",
+    "f1": { "title": "Verified History", "desc": "Full vehicle history reports with no hidden surprises." },
+    "f2": { "title": "Exceptional Value", "desc": "Save 40-70% compared to traditional dealership prices." },
+    "f3": { "title": "Expert Inspection", "desc": "200-point mechanical and cosmetic inspection on every vehicle." },
+    "f4": { "title": "White Glove Delivery", "desc": "Nationwide delivery directly to your doorstep." }
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Schedule a Private Viewing",
+    "subtitle": "Our luxury vehicle specialists are ready to assist you in finding your perfect automobile.",
+    "phone": { "label": "Phone" },
+    "email": { "label": "Email" },
+    "location": { "label": "Showroom" },
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone",
+      "email": "Email",
+      "interest": "Vehicle of Interest",
+      "selectVehicle": "Select a vehicle (optional)",
+      "message": "Message",
+      "messagePlaceholder": "I'm interested in...",
+      "submit": "Send Inquiry",
+      "success": "Thank you! We'll be in touch shortly."
+    }
+  },
+  "footer": {
+    "copy": "© 2024 Elite Repo Motors. All rights reserved."
+  }
+}
